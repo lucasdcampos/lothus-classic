@@ -17,5 +17,5 @@ MonoBehaviour:
   octaves: 5
   persistance: 0.3
   lacunarity: 2
-  seed: 10
+  seed: 38
   offset: {x: 0, y: 0}

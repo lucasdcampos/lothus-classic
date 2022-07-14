@@ -42,9 +42,10 @@ public class AudioController : MonoBehaviour
         }
     }
     
-
     IEnumerator FootstepsDelay()
     {
+        source.pitch = Random.Range(0.8f, 1.2f);
+        source.volume = Random.Range(0.95f, 1.05f);
         source.clip = clips[index];
         playing = true;
         source.Play();
