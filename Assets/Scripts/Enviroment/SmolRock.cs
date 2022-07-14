@@ -18,16 +18,18 @@ public class SmolRock : MonoBehaviour
             }
             
         }
-        else
-        {
-            
-            UIManager.Instance.collectTxt.gameObject.SetActive(false);
-        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        UIManager.Instance.collectTxt.gameObject.SetActive(false);
     }
 
 
     void Collect()
     {
+        UIManager.Instance.ItemCollected();
+        UIManager.Instance.collectTxt.gameObject.SetActive(false);
         Inventory.Instance.data.rock++;
         Destroy(gameObject);
     }

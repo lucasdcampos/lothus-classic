@@ -9,13 +9,19 @@ public class UIManager : MonoBehaviour
 
     public static UIManager Instance;
 
+    AudioSource source;
+
+    public AudioClip itemcollectedSFX;
+
     private void Awake()
     {
+        source = GetComponent<AudioSource>();
         Instance = this;
     }
 
-    void ItemCollected()
+   public void ItemCollected()
     {
-
+        source.clip = itemcollectedSFX;
+        source.Play();
     }
 }
