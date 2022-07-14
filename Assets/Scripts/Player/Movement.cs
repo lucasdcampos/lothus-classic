@@ -97,13 +97,13 @@ public class Movement : MonoBehaviour
             xRot -= mouseY;
             xRot = Mathf.Clamp(xRot, -90f, 90f);
 
-            if (!gm.isPaused)
+            if (!gm.isPaused && !Inventory.Instance.isOpen)
             {
                 cam.transform.rotation = Quaternion.Euler(xRot, yRot, 0);
                 orientation.rotation = Quaternion.Euler(0, yRot, 0);
-
-                cam.transform.position = head.transform.position;
             }
+
+            cam.transform.position = head.transform.position;
 
 
 
