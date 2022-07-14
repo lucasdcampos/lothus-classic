@@ -20,13 +20,35 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public void CreateRoom()
     {
         {
+            if (!PhotonNetwork.IsConnected)
+            {
+                PhotonNetwork.OfflineMode = true;
+            }
+            else
+            {
+                PhotonNetwork.OfflineMode = false;
+            }
+
             lobbyID = Random.Range(1000000000, 2000000000);
             PhotonNetwork.CreateRoom(lobbyID.ToString());
         }
 
     }
 
-    public void JoinRoom() { PhotonNetwork.JoinRoom(joinInput.text); }
+    public void JoinRoom() {
+
+        if (PhotonNetwork.OfflineMode)
+        {
+            print("Can't join room in Offline Mode!");
+        }
+        else
+        {
+            PhotonNetwork.JoinRoom(joinInput.text);
+        }
+
+        
+    
+    }
 
     public override void OnJoinedRoom()
     {

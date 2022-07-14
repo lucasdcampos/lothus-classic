@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 8871957085660450120}
   - component: {fileID: 371327234359566991}
   - component: {fileID: 206141247594829947}
+  - component: {fileID: 8435183609861082741}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -413,6 +414,20 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 95e5cd154aacfb94696a90c51ab22072, type: 3}
   - {fileID: 8300000, guid: 5777dec4653c1d047b9d68f647fb3194, type: 3}
   playing: 0
+--- !u!136 &8435183609861082741
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9200005748510800627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.56
+  m_Height: 2.4
+  m_Direction: 1
+  m_Center: {x: 0.6, y: 0.7, z: 0}
 --- !u!1001 &1444802539931513964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,20 +536,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 983802265c02ce74e96553cf80598f88, type: 3}
   m_PrefabInstance: {fileID: 1444802539931513964}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &2742089487329130677
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1787244677871569213}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.9
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!114 &4751153383361743889
 MonoBehaviour:
   m_ObjectHideFlags: 0

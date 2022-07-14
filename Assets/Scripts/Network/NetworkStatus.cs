@@ -9,18 +9,18 @@ public class NetworkStatus : MonoBehaviour
 
     void Update()
     {
-        if (PhotonNetwork.IsConnected)
+        if (!PhotonNetwork.OfflineMode)
         {
             GetComponent<Text>().text = "* Online";
             GetComponent<Text>().color = Color.green;
-            print("Connected!");
+            
         }
         else
         {
             GetComponent<Text>().text = "* Offline";
             GetComponent<Text>().color = Color.red;
-            print("Offline!");
-            PhotonNetwork.OfflineMode = true;
+            
+            
         }
     }
 }
