@@ -6,9 +6,17 @@ public class LightingManager : MonoBehaviour
     [SerializeField] private Light DirectionalLight;
     [SerializeField] private LightingPreset Preset;
     [SerializeField, Range(0, 24)] public float TimeOfDay;
-
     public float multiplier;
 
+    public bool isNight;
+
+
+    public static LightingManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {
@@ -25,6 +33,16 @@ public class LightingManager : MonoBehaviour
         else
         {
             UpdateLighting(TimeOfDay / 24f);
+        }
+
+
+        if(TimeOfDay >=6 && TimeOfDay < 18)
+        {
+            isNight = false;
+        }
+        else
+        {
+            isNight = true;
         }
     }
 

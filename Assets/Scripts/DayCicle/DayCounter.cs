@@ -7,28 +7,35 @@ public class DayCounter : MonoBehaviour
 {
     public Animator anim;
     public Text text;
-    [HideInInspector] public int day;
+    
 
-    private void Start()
+
+    private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(Day());
+        UpdateDay();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        UpdateDay();
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        UpdateDay();
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        UpdateDay();
     }
 
 
-    public IEnumerator Day()
+    public void UpdateDay()
     {
-        day++;
-        text.text = "- DAY: " + day + " -";
+        GameManager.Instance.day++;
+        text.text = "- DAY: " + GameManager.Instance.day + " -";
         anim.SetTrigger("start");
-        yield return new WaitForSeconds(1);
         GetComponent<AudioSource>().Play();
-
-        yield return new WaitForSeconds(24 / GetComponent<LightingManager>().multiplier);
-        Restart();
-    }
-
-    public void Restart()
-    {
-        StartCoroutine(Day());
     }
 }

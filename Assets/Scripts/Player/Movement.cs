@@ -5,7 +5,6 @@ using Photon.Pun;
 
 public class Movement : MonoBehaviour
 {
-    Stats stats;
     PhotonView view;
     GameManager gm;
 
@@ -56,7 +55,6 @@ public class Movement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        stats = GetComponent<Stats>();
         view = GetComponent<PhotonView>();
         canJump = true;
         cam = Camera.main;
@@ -164,10 +162,19 @@ public class Movement : MonoBehaviour
         jumping = true;
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        Player.Instance.particles.jumpDust.Play();
 
+        if(Player.Instance.stats.Stamina >= 10)
+        {
+            Player.Instance.stats.Stamina -= 10;
+        }
 
-        stats.Stamina -= 10;
-        stats.Hunger -= 1;
+        if(Player.Instance.stats.Hunger >= 1)
+        {
+            Player.Instance.stats.Hunger -= 1;
+        }
+        
+        
     }
 
 
@@ -176,7 +183,7 @@ public class Movement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Jump") && stats.Stamina > 20 && canJump && isGrounded)
+        if (Input.GetButtonDown("Jump") && Player.Instance.stats.Stamina > 20 && canJump && isGrounded)
         {
             canJump = false;
             Jump();
@@ -184,20 +191,24 @@ public class Movement : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.LeftShift) && stats.Stamina > 0.1f)
+        if (Input.GetKey(KeyCode.LeftShift) && Player.Instance.stats.Stamina >= 1f)
         {
             Speed = sprintSpeed;
-            stats.Stamina -= 10 * Time.deltaTime;
-            stats.Hunger -= 0.5f * Time.deltaTime;
+            Player.Instance.stats.Stamina -= 10 * Time.deltaTime;
+            if(Player.Instance.stats.Hunger >= 0.5f)
+            {
+                Player.Instance.stats.Hunger -= 0.5f * Time.deltaTime;
+            }
+            
             running = true;
         }
         else
         {
             running = false;
             Speed = walkSpeed;
-            if(stats.Stamina <= 100)
+            if(Player.Instance.stats.Stamina <= 100)
             {
-                stats.Stamina += 8 * Time.deltaTime;
+                Player.Instance.stats.Stamina += 8 * Time.deltaTime;
             }
             
         }
