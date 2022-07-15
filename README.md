@@ -2,6 +2,13 @@
 <h3> About: </h3>
 Lothus is a survival game with procedural world generation. Wich means that every time that you play the game, is in a different world. The game consists of surviving on deserted islands, there are several different islands to explore. Each island has unique characteristics, where the player must progress to advance from island to island.
 
+<br>
+<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/74553272/179272029-63923e2a-85bb-4c2c-9bc0-05f6dfc77438.png">
+</p>
+
+
 <hr>
 
 <h3> Source Code: </h3>
