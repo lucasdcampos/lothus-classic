@@ -11,14 +11,27 @@ public class PropsGenerator : MonoBehaviour
     public float scale;
     public float range;
 
+    [Header("Spawn Height:")]
+    public float minHeight;
+    public float maxHeight;
+
+    [SerializeField] private bool drawRay;
     private void Start()
     {
+        if(minHeight == 0)
+        {
+            minHeight = 10;
+        }
         Generate();
     }
 
     private void Update()
     {
-        Debug.DrawRay(transform.position, -transform.up, Color.green);
+        if (drawRay)
+        {
+            Debug.DrawRay(transform.position, -transform.up, Color.green);
+        }
+        
     }
 
 
@@ -35,13 +48,14 @@ public class PropsGenerator : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
-                if (hit.collider.tag == "Ground")
+                
+                if (hit.point.y >= minHeight && hit.point.y <= maxHeight)
                 {
+                    
                     Vector3 randomRot = new Vector3(0, Random.Range(0, 360), 0);
                     Instantiate(prefab, new Vector3(hit.point.x, hit.point.y, hit.point.z), Quaternion.Euler(randomRot));
                     prefab.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
                 }
-
             }
         }
     }
