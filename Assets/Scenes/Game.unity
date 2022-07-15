@@ -6511,6 +6511,7 @@ GameObject:
   - component: {fileID: 292065327}
   - component: {fileID: 292065329}
   - component: {fileID: 292065328}
+  - component: {fileID: 292065330}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -6555,7 +6556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.29411766}
+  m_Color: {r: 0.4245283, g: 0.23198737, b: 0.16620682, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -6580,6 +6581,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292065326}
   m_CullTransparentMesh: 1
+--- !u!114 &292065330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292065326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.33962262, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 5, y: 5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &297127333
 GameObject:
   m_ObjectHideFlags: 0
@@ -7170,6 +7186,9 @@ MonoBehaviour:
   range: 500
   minHeight: 3
   maxHeight: 50
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
   drawRay: 0
 --- !u!1 &379656227
 GameObject:
@@ -16432,6 +16451,9 @@ MonoBehaviour:
   range: 500
   minHeight: 0.3
   maxHeight: 50
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
   drawRay: 0
 --- !u!1 &968646974
 GameObject:
@@ -17884,9 +17906,9 @@ RectTransform:
   m_Father: {fileID: 2006143141}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 20.800003, y: -37.399994}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 340.1604, y: 23.356293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116494957
@@ -20350,9 +20372,9 @@ RectTransform:
   m_Father: {fileID: 2006143141}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 20.799988, y: 42}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 340.1604, y: 23.3563}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1414186922
@@ -20522,6 +20544,9 @@ MonoBehaviour:
   range: 500
   minHeight: 10
   maxHeight: 50
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
   drawRay: 0
 --- !u!1 &1427656224
 GameObject:
@@ -27629,6 +27654,9 @@ MonoBehaviour:
   range: 500
   minHeight: 2.5
   maxHeight: 30
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
   drawRay: 0
 --- !u!1 &1631614041
 GameObject:
@@ -27957,6 +27985,9 @@ MonoBehaviour:
   range: 500
   minHeight: 0.3
   maxHeight: 50
+  layer:
+    serializedVersion: 2
+    m_Bits: 8
   drawRay: 0
 --- !u!1 &1646902682
 GameObject:
@@ -30693,6 +30724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2006143141}
   - component: {fileID: 2006143142}
+  - component: {fileID: 2006143143}
   m_Layer: 5
   m_Name: Bars
   m_TagString: Untagged
@@ -30730,6 +30762,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006143140}
   m_CullTransparentMesh: 1
+--- !u!114 &2006143143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006143140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 10
+    m_Right: 30
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 5
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &2020927162
 GameObject:
   m_ObjectHideFlags: 0
@@ -31007,9 +31065,9 @@ RectTransform:
   m_Father: {fileID: 2006143141}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.799988, y: 0.8781967}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 340.1604, y: 23.3563}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2073729586

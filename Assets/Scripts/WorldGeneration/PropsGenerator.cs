@@ -14,6 +14,7 @@ public class PropsGenerator : MonoBehaviour
     [Header("Spawn Height:")]
     public float minHeight;
     public float maxHeight;
+    public LayerMask layer;
 
     [SerializeField] private bool drawRay;
     private void Start()
@@ -46,7 +47,7 @@ public class PropsGenerator : MonoBehaviour
 
             Ray ray = new Ray(randomPos, -transform.up);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer))
             {
                 
                 if (hit.point.y >= minHeight && hit.point.y <= maxHeight)
