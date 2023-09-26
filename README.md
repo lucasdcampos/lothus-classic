@@ -1,7 +1,7 @@
 # This repository will no longer receive updates!
 
 Check out our new repository here:<br>
-**>>>>>** This repository is also no longer available **<<<<<**
+**>>>>>** The other repository is also no longer available **<<<<<**
 
 Lothus is being remade from scratch on another repo
 
